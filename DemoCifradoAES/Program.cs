@@ -36,7 +36,7 @@ namespace DemoCifradoAES
             {
                 Console.WriteLine("===Encriptar Archivos===");
 
-                string rutaOriginal = @"C:\Users\datasoft-edgardo\Desktop\pdf\160KB Prueba - Test Standard.pdf";
+                string rutaOriginal = @"C:\Users\datasoft-edgardo\Desktop\pdf\12MB testing001.pdf";
                 string rutaDestinoEnc = @"C:\Users\datasoft-edgardo\Desktop\160KB Prueba - Test Standard.AES256";
                 string rutaDestinoDesEnc = @"C:\Users\datasoft-edgardo\Desktop\160KB Prueba - Test Standard DESCENC.pdf";
 
@@ -75,8 +75,8 @@ namespace DemoCifradoAES
                 string roundtrip = Encoding.ASCII.GetString(a.Decrypt256(encrypted));
 
                 //Display the original data and the decrypted data.
-                Console.WriteLine("Original:   {0}", original);
-                Console.WriteLine("Encriptado:   {0}", b64Encrypted);
+                Console.WriteLine("Original:    {0}", original);
+                Console.WriteLine("Encriptado:  {0}", b64Encrypted);
                 Console.WriteLine("Descriptado: {0}", roundtrip);
                 Console.WriteLine("");
             }
