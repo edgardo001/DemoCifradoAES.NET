@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using System.Text;
 
 /// <summary>
-///
 ///AES, the Advanced Encryption Standard, defines in FIPS PUB 197 three symmetric block-ciphers: AES-128, AES-192 and AES-256. All three algorithms are defined by specific parameter-choices for the Rijndael algorithm.
 ///AES-128-encryption is a function(key, data) -> (encryption). Rijndael-encryption is a function(key, data, block-size, key-size) -> (encryption).
 ///AesCryptoServiceProvider uses the underlying Windows CryptoAPI to perform the encryption.AesManaged performs the encryption in pure managed code.RijndaelManaged supports the full range of parameter-choices (also in pure managed code).
@@ -17,7 +16,7 @@ using System.Text;
 namespace DemoCifradoAES
 {
     class AesEncryptDecrypt
-    {
+    { 
         // AesCryptoServiceProvider
         private AesCryptoServiceProvider myAes = new AesCryptoServiceProvider();
         /// <summary>
@@ -67,10 +66,9 @@ namespace DemoCifradoAES
                     return encrypt.TransformFinalBlock(src, 0, src.Length);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception(ex.Message, ex);
             }
         }
         /// <summary>

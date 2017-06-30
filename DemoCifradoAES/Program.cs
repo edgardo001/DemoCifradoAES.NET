@@ -14,11 +14,8 @@ namespace DemoCifradoAES
         {
             try
             {
-                encriptarFrases();                
+                encriptarFrases();
                 encriptarArchivos();
-
-                //miEjemplo m = new miEjemplo();
-                
             }
             catch (Exception e)
             {
@@ -49,7 +46,7 @@ namespace DemoCifradoAES
 
                 byte[] archivoEncriptado = File.ReadAllBytes(rutaDestinoEnc);
                 byte[] desencrypted = aesEncryptDecrypt.Decrypt256(archivoEncriptado);
-                File.WriteAllBytes(rutaDestinoDesEnc,desencrypted);
+                File.WriteAllBytes(rutaDestinoDesEnc, desencrypted);
 
                 Console.WriteLine("Archivo Encriptado en: {0}", rutaDestinoEnc);
                 Console.WriteLine("Archivo Desencriptado en: {0}", rutaDestinoDesEnc);
@@ -82,7 +79,7 @@ namespace DemoCifradoAES
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message,ex);
+                throw new Exception(ex.Message, ex);
             }
         }
     }
